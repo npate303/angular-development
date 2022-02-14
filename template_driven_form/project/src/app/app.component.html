@@ -4,44 +4,47 @@
 <h4>Form Control :  ngModel and needs name attribute </h4>
 
 <form #simpleForm="ngForm" (ngSubmit)="onSubmit(simpleForm)">
+
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" ngModel>
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <label class="form-label">First Name</label>
+    <input type="text" class="form-control"  name="firstName" ngModel>
   </div>
+
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label"  >Password</label>
-    <input type="password" class="form-control"  value="" name="passwordForm" id="exampleInputPassword1" ngModel>
+    <label class="form-label">Last Name</label>
+    <input type="text" class="form-control"  value="" name="lastName"  ngModel>
   </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1"  value="" name="checkboxForm" ngModel>
-    <label>Check me out</label>
-  </div>
+
   <div class="form-check my-5">
     <select ngModel name="selectedSubject">
-    <option selected value=""  name="bydefault">Please select an option</option>
+    <option selected value=""  name="bydefault" class="form-control">Please select an option</option>
     <option *ngFor="let subject of sub" [value]="subject"> {{subject}}</option>
     </select>
   </div>
 
   <div ngModelGroup="address">
-    <label> Address: </label>
-    <div>
-      <label>City:</label>
-      <input type="text" name="city" ngModel>
+    <label class="form-label"> Address: </label>
+
+    <div class="mx-2 my-2">
+      <label class="form-label">City:</label>
+      <input type="text" name="city"  class="form-control" ngModel>
     </div>
-    <div>
-      <label>state:</label>
-      <input type="text" name="state" ngModel>
+
+    <div class="mx-2 my-2">
+      <label class="form-label">state:</label>
+      <input type="text" name="state"  class="form-control" ngModel>
     </div>
-    <div>
-      <label>Zip Code:</label>
-      <input type="text" name="zipcode" ngModel>
+
+    <div class="mx-2 my-2">
+      <label class="form-label">Zip Code:</label>
+      <input type="text" name="zipcode"  class="form-control" ngModel>
     </div>
+
   </div>
 
   <button type="submit" class="btn btn-primary mx-4 my-4">Submit</button>
   <button type="submit" class="btn btn-danger" (click)="resetmyFrom(simpleForm)">Reset</button>
+
 </form>
 
 </div>
